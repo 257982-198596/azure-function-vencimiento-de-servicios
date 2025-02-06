@@ -16,7 +16,7 @@ namespace AFVencimientos
         }
 
         [Function("PostToApi")]
-        public async Task Run([TimerTrigger("0 0 0 * * *")] TimerInfo myTimer, FunctionContext context)
+        public async Task Run([TimerTrigger("0 0 3 * * *")] TimerInfo myTimer, FunctionContext context)
         {
             
             var logger = context.GetLogger("PostToApi");
@@ -48,7 +48,7 @@ namespace AFVencimientos
 
                 if (response.IsSuccessStatusCode)
                 {
-                    logger.LogInformation($"Éxito: {responseContent}");
+                    logger.LogInformation($"ï¿½xito: {responseContent}");
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace AFVencimientos
             }
             catch (Exception ex)
             {
-                logger.LogError($"Excepción: {ex.Message}");
+                logger.LogError($"Excepciï¿½n: {ex.Message}");
             }
         }
     }
